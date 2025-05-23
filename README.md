@@ -1,2 +1,4 @@
-# vue-mindmap360
-# llm-production-training
+venv/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
