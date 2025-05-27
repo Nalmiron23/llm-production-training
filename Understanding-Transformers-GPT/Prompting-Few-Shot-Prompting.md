@@ -38,6 +38,9 @@ load_dotenv()
 ---
 
 ## Example: Story Generation
+In this example, the prompt sets up the start of a story, providing initial context ("a world where animals could speak") and a character ("a courageous mouse named Benjamin"). The model's task is to generate the rest of the story based on this prompt.
+
+Note that in this example we are defining separately a prompt_system and a prompt. This is because the OpenAI API works this way, requiring a “system prompt” to steer the model behaviour. This is different from other LLMs that require only a standard prompt.
 
 ```python
 from openai import OpenAI
@@ -63,6 +66,7 @@ print(response.choices[0]['message']['content'])
 ---
 
 ## Example: Product Description
+Here, the prompt is a request for a product description with key details ("luxurious, hand-crafted, limited-edition fountain pen made from rosewood and gold"). The model is tasked with writing an appealing product description based on these details.
 
 ```python
 prompt_system = "You are a helpful assistant whose goal is to help write product descriptions."
@@ -85,7 +89,7 @@ print(response.choices[0]['message']['content'])
 
 ## Zero-Shot Prompting
 
-Zero-shot prompting means **asking the model to perform a task without providing examples**.
+In the context of prompting, **“zero-shot prompting”** is where we directly ask for the result without providing reference examples for the task. For many tasks, LLMs are smart enough to produce great results. This is exactly what we did in the examples above. Here’s a new example where we ask an LLM to write a short poem about summer.
 
 ### Example: Poem Generation
 
@@ -109,7 +113,11 @@ print(response.choices[0]['message']['content'])
 
 ##  In-Context Learning & Few-Shot Prompting
 
-Few-shot prompting = Giving the model a **few input-output examples** so it learns the task format from context.
+In the context of LLMs, **in-context learning** is a powerful approach where the model learns from demonstrations or exemplars provided within the prompt. **Few-shot prompting** is a technique under in-context learning that involves giving the language model a few examples or demonstrations of the task at hand to help it generalize and perform better on complex tasks.
+
+Few-shot prompting allows language models to learn from a limited amount of data, making them more adaptable and capable of handling tasks with minimal training samples. Instead of relying solely on zero-shot capabilities (where the model predicts outputs for tasks it has never seen before), few-shot prompting leverages the in-context demonstrations to improve performance.
+
+In few-shot prompting, the prompt typically includes multiple questions or inputs along with their corresponding answers. The language model learns from these examples and generalizes to respond to similar queries.
 
 ### Example: Few-Shot Poem Generation
 
