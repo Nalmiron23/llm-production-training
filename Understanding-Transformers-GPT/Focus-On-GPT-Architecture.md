@@ -4,8 +4,6 @@
 
 The Generative Pre-trained Transformer (GPT) is a type of transformer-based language model developed by OpenAI. The 'transformer' part of its name refers to its transformer architecture, which was introduced in the research paper "Attention is All You Need" by Vaswani et al.
 
-You should have a good understanding of the fundamental elements comprising the transformer architecture. In this session, we will cover the decoder-only networks that play an essential role in developing large language models. We will explore their unique attributes and the reasons behind their effectiveness.
-
 In contrast to conventional Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTM) networks, the transformer architecture departs from recurrence and adopts self-attention mechanisms, resulting in substantial advancements in speed and scalability. An immensely powerful architecture was unleashed by harnessing the potential for parallelization within the network (simultaneously running multiple head attentions) along with the abundant small cores available in a GPU.
 
 ### The GPT Architecture
@@ -42,9 +40,15 @@ def self_attention(query, key, value, mask=None):
 
 This function showcases how to implement masked self-attention by applying a mask and computing softmax-based weights.
 
+The first step is to compute a Query, Key, and Value vector for each word in the input sequence using separate learned linear transformations of the input vector. It is a simple feedforward linear layer that the model learns during training.
+
+Then, we can calculate the attention scores by taking the dot product of its Query vector with the Key vector of every other word. Currently, the application of masking is feasible by setting the scores in specific locations to a large negative number. This effectively informs the model that those words are unimportant and should be disregarded during attention. To get the attention weights, apply the SoftMax function to the attention scores to convert them into probabilities. This gives the weights of the input words and effectively turns the significant negative scores to zero. Lastly, multiply each Value vector by its corresponding weight and sum them up. This produces the output of the masked self-attention mechanism for the word.
+
+The provided code snippet illustrates the process of a single self-attention head, but in reality, each layer contains multiple heads, which could range from 16 to 32 heads, depending on the architecture. These heads operate simultaneously to enhance the model's performance.
+
 ### Causal Language Modeling
 
-LLMs utilize a self-supervised learning process for pre-training. This process eliminates the need to provide explicit labels to the model for learning, making it capable of acquiring knowledge autonomously.
+LLMs utilize a self-supervised learning process for pre-training. This process eliminates the need to provide explicit labels to the model for learning, making it capable of acquiring knowledge autonomously.For instance, when training a summarization model using supervised learning, it is necessary to provide articles and their corresponding summaries as reference points during the training process. However, LLMs employ the causal language modeling objective to acquire knowledge from any textual data without the explicit need for human-provided labels. Why is it called “causal”? Because the prediction at each step depends only on earlier steps in the sequence and not on future steps.
 
 This process involves feeding a segment of the document to the model and asking it to predict the next word. The predicted word is then concatenated to the original input and fed back into the model. This loop continues, enabling the model to learn language and grammar.
 
@@ -67,6 +71,4 @@ This implementation runs on modest hardware like a MacBook Air or Colab.
 
 ### Conclusion
 
-Decoder-only architectures like GPT have driven recent LLM advancements. Understanding transformer internals and GPT-specific design choices such as masked self-attention and causal modeling helps us appreciate their strengths.
-
-In subsequent lessons, we will explore fine-tuning strategies, model evaluation, and deployment approaches to use GPT effectively in production.
+The decoder-only architecture and GPT-family models have driven the recent advancements in large language models. It is essential to possess a strong grasp of the transformer architecture and comprehend the distinctive features that set the decoder-only models apart, making them well-suited for language modeling. 
