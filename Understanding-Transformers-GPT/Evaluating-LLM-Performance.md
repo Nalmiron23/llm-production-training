@@ -67,6 +67,79 @@ print(perplexity)  # Output: 1.516...
 
 The final score is an average over all tasks.
 
+Here’s a breakdown of all the **acronyms** used in the **GLUE Benchmark** and what they stand for:
+
+---
+
+### 🔹 **CoLA** — *Corpus of Linguistic Acceptability*
+
+* **Task**: Determine whether a sentence is grammatically acceptable.
+* **Example**: "The boy laughed." → Acceptable.
+  "The boy laughing." → Not acceptable.
+
+---
+
+### 🔹 **SST-2** — *Stanford Sentiment Treebank (binary classification)*
+
+* **Task**: Sentiment analysis (positive or negative sentiment).
+* **Example**: "A thrilling and emotionally resonant film." → Positive.
+
+---
+
+### 🔹 **MRPC** — *Microsoft Research Paraphrase Corpus*
+
+* **Task**: Determine whether two sentences are paraphrases of each other.
+* **Example**:
+  S1: "He said the food was great."
+  S2: "He mentioned the food was excellent." → Paraphrase.
+
+---
+
+### 🔹 **QQP** — *Quora Question Pairs*
+
+* **Task**: Identify if two questions asked on Quora are semantically equivalent.
+* **Example**:
+  Q1: "How can I learn to cook?"
+  Q2: "What is the best way to start learning to cook?" → Equivalent.
+
+---
+
+### 🔹 **STS-B** — *Semantic Textual Similarity Benchmark*
+
+* **Task**: Measure the similarity between two sentences on a continuous scale (typically 0 to 5).
+* **Example**:
+  S1: "A man is playing a guitar."
+  S2: "A person is playing music on a guitar." → Similarity Score: 4.8
+
+---
+
+### 🔹 **RTE** — *Recognizing Textual Entailment*
+
+* **Task**: Determine if a premise entails (implies) a hypothesis.
+* **Example**:
+  Premise: "All dogs bark."
+  Hypothesis: "My dog barks." → Entailment.
+
+---
+
+### 🔹 **QNLI** — *Question Natural Language Inference*
+
+* **Task**: Determine if the context sentence contains the answer to a given question.
+* **Example**:
+  Question: "Where is the Eiffel Tower?"
+  Context: "The Eiffel Tower is in Paris." → Entailment.
+
+---
+
+### 🔹 **WNLI** — *Winograd Natural Language Inference*
+
+* **Task**: Coreference resolution—decide which noun a pronoun refers to.
+* **Example**:
+  Sentence: "The city council refused the demonstrators a permit because they feared violence."
+  Who feared violence? → "The city council."
+
+
+
 ---
 
 ## The SuperGLUE Benchmark
