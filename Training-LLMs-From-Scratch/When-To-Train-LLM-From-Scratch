@@ -61,10 +61,3 @@ Training a model from scratch demands substantial resources, including hardware 
 * **Training From Scratch:** If fine-tuning is not effective, consider training a model from scratch with domain-specific data. However, this requires significant resources, such as cost, dataset availability, and expertise.
 
 ---
-
-## Conclusion
-
-We have explored various methods to harness the capabilities of large language models within your organization and highlighted the advantages and disadvantages of each approach. Picking the best practice depends on your organization’s use case and the resources at hand.
-
-This course aims to equip you with the necessary knowledge to make informed decisions about which approach best suits your needs. It will also guide on maximizing the benefits of large language models and mastering the process involved.
-  
