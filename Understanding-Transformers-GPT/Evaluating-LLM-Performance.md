@@ -138,8 +138,6 @@ Here’s a breakdown of all the **acronyms** used in the **GLUE Benchmark** and 
   Sentence: "The city council refused the demonstrators a permit because they feared violence."
   Who feared violence? → "The city council."
 
-
-
 ---
 
 ## The SuperGLUE Benchmark
