@@ -49,3 +49,28 @@ These leaderboards often use overlapping tasks and metrics to ensure fair model 
 ```bash
 git clone https://github.com/EleutherAI/lm-evaluation-harness
 cd lm-evaluation-harness && git checkout e2eb966  # Pin to version 0.3.0
+
+List Available tasks
+
+from lm_eval import tasks
+print(tasks.ALL_TASKS)
+
+Run Evaluation (Example)
+Evaluate facebook/opt-1.3b on hellaswag:
+python main.py \
+  --model hf-causal \
+  --model_args pretrained=facebook/opt-1.3b \
+  --tasks hellaswag \
+  --device cuda:0
+
+Sample Output
+{
+  "results": {
+    "hellaswag": {
+      "acc": 0.4147,
+      "acc_stderr": 0.0049,
+      "acc_norm": 0.5368,
+      "acc_norm_stderr": 0.0050
+    }
+  }
+}
