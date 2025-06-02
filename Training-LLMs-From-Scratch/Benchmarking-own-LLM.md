@@ -89,3 +89,57 @@ python main.py \
 
 Combine Multiple Tasks
 --tasks hellaswag,arc_challenge
+
+InstructEval
+InstructEval is another evaluation framework tailored for instruction-tuned models. It blends automated benchmarks with GPT-4-based scoring.
+
+Three Main Evaluation Categories
+1. Problem-Solving Evaluation
+Tests include:
+
+MMLU (World Knowledge)
+
+BBH (Complex Instructions)
+
+DROP (Reasoning over Paragraphs)
+
+HumanEval (Programming)
+
+CRASS (Causality)
+
+2. Writing Evaluation
+GPT-4 evaluates generated outputs on a 1–5 Likert scale using the following criteria:
+
+Informative
+
+Professional
+
+Argumentative
+
+Creative
+
+3. Alignment to Human Values
+Evaluates preference between pairs of completions to judge:
+
+Helpfulness
+
+Honesty
+
+Harmlessness
+
+
+Conclusion
+
+Standardized evaluation metrics are crucial for comparing models fairly. In this lesson, we explored:
+
+Popular benchmarks and leaderboards
+
+The lm-evaluation-harness library
+
+The InstructEval framework
+
+Not every model must excel in every metric. Focus on benchmarks most relevant to your use case and keep an eye on evolving leaderboards.
+
+
+
+Notebook: https://colab.research.google.com/drive/1d4gJso06wgSq6Rj7JmPKnNjY8i1Bd78g?usp=sharing
