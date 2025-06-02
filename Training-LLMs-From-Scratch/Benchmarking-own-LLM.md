@@ -74,3 +74,18 @@ Sample Output
     }
   }
 }
+
+Customize Model Arguments
+You can specify model revisions and datatypes like this:
+--model_args pretrained=EleutherAI/pythia-160m,revision=step100000,dtype=float
+
+Evaluate OpenAI Models
+export OPENAI_API_SECRET_KEY=YOUR_KEY_HERE
+
+python main.py \
+  --model gpt3 \
+  --model_args engine=davinci \
+  --tasks hellaswag
+
+Combine Multiple Tasks
+--tasks hellaswag,arc_challenge
