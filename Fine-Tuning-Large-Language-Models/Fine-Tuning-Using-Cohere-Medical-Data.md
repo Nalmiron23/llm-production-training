@@ -153,4 +153,3 @@ Conclusion
 
 Cohere offers an excellent no-code or low-code interface for rapid fine-tuning. It’s especially powerful for domain experts who want to adapt LLMs without deep ML engineering knowledge.
 
-In the next lessons, we’ll return to model customization using RLHF and GPU-powered setups.
